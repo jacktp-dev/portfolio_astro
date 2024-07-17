@@ -1,0 +1,16 @@
+---
+import type { string } from 'astro/zod'
+
+interface Props {
+    link: string; 
+}
+
+const {link} = Astro.props;
+---
+<a
+    class="flex items-center box-border self-stretch mb-[-1px] text-menu-text border-b border-border-button 
+    hover:border-title-color hover:text-title-color transition-all"
+    href={link}
+    >
+    <slot />
+</a>

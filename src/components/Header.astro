@@ -1,0 +1,21 @@
+---
+import Switch from "./mode/Switch.astro";
+import NavItem from "./NavItem.astro";
+import Menu from "./lang/Menu.astro";
+---
+
+<header class="flex fixed bg-white w-full m-0 max-w-screen-xl mx-auto px-8 justify-between items-center border-b box-border z-50">
+        <span>jacktroncos20@gmail.com</span>
+
+    <nav class="flex h-16 gap-10 justify-center items-center">
+        <NavItem link="#sobre-mi"> Sobre mí</NavItem>
+        <NavItem link="#servicios"> Servicios</NavItem>
+        <NavItem link="#portafolio"> Portafolio</NavItem>
+        <NavItem link="#contacto"> Contacto</NavItem>
+    </nav>
+
+    <div class="flex gap-6 items-center">
+        <Menu/>
+        <Switch/>
+    </div>
+</header>

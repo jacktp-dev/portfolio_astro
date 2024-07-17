@@ -1,0 +1,46 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { ViewTransitions } from 'astro:transitions';
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<ViewTransitions/>
+		<title>{title}</title>
+	</head>
+	<body class="flex flex-col items-center justify-between min-h-screen">
+		<Header/>
+		<slot />
+		<Footer/>
+	</body>
+</html>
+
+<style is:global>
+	@font-face {
+		font-family: "Averta";
+		src: url('/public/fonts/AvertaDemo/AvertaDemoPE-Regular.woff') format('woff');
+		font-weight: normal;
+		font-style: normal;
+		font-display: swap;
+	}
+	*{
+		font-family: "Averta", sans-serif;
+	}
+
+	::-webkit-scrollbar{
+		display: none;
+	}
+</style>
+
