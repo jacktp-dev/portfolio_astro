@@ -9,7 +9,7 @@ const {text, primary} = Astro.props;
 const className = primary ? "bg-title-color text-white hover:bg-[#383838]":"border border-border-button bg-white hover:bg-[#F2F2F2]"
 
 ---
-<button class=`flex justify-center items-center px-8 h-11 rounded-md gap-2.5 self-stretch transition-all ${className}`>
+<button class=`flex justify-center items-center px-8 h-11 rounded-md gap-2.5 transition-all ${className}`>
     {text}
     <slot/>
 </button>

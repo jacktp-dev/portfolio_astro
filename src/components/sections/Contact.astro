@@ -1,0 +1,19 @@
+---
+import Button from "../buttons/Button.astro";
+
+const primary = false;
+---
+
+<section class="flex w-full m-8 my-20 items-center justify-center">
+    <article class="w-full max-w-screen-xl  flex flex-col p-16 rounded-md items-center justify-center gap-8 bg-neutral-950 bg-[url('/bg-contact.wepb')]">
+        <h2 class="text-4xl text-white">
+            Cree un sitio web más rápido y hermoso.
+        </h2>
+
+        <p class="text-zinc-500">
+            Cuéntanos tu proyecto, detalla tu idea y comencemos a trabajar para hacerlo realidad.
+        </p>
+
+        <Button primary={primary} text="Empecemos"/>
+    </article>
+</section>
