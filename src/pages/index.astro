@@ -1,11 +1,13 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Hero from '../components/Hero.astro';
+import Hero from '../components/sections/Hero.astro';
+import Skills from '../components/sections/Skills.astro';
 ---
 
 <Layout title="Jack TP">
-	<main class="z-10">
+	<main class="z-10 flex flex-col items-center">
 		<Hero/>
+		<Skills/>
 	</main>
 </Layout>
 

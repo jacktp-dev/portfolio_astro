@@ -5,6 +5,7 @@ export default {
 		extend: {
 			colors: {
 				'subtitle-color':'#696969',
+				'text-color':'#696969',
 				'title-color': '#171717',
 				'input-color': '#E3E3E3',
 				'input-placeholder' : '#585858',

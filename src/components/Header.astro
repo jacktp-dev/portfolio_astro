@@ -2,9 +2,10 @@
 import Switch from "./mode/Switch.astro";
 import NavItem from "./NavItem.astro";
 import Menu from "./lang/Menu.astro";
+
 ---
 
-<header class="flex fixed bg-white w-full m-0 max-w-screen-xl mx-auto px-8 justify-between items-center border-b box-border z-50">
+<header class="header flex fixed w-full m-0 max-w-screen-xl mx-auto px-8 justify-between items-center  box-border z-50">
         <span>jacktroncos20@gmail.com</span>
 
     <nav class="flex h-16 gap-10 justify-center items-center">
@@ -19,3 +20,16 @@ import Menu from "./lang/Menu.astro";
         <Switch/>
     </div> -->
 </header>
+
+<script>
+    const header = document.querySelector('header');
+     window.addEventListener('scroll', () => {
+        if (window.scrollY > 10) {
+            header.classList.add('bg-white');
+            header.classList.add('border-b');
+        } else {
+            header.classList.remove('bg-white');
+            header.classList.remove('border-b');
+        }
+    });
+</script>
