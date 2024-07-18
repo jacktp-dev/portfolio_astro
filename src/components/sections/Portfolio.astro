@@ -1,0 +1,104 @@
+---
+import IconArrow from "../icons/IconArrow.astro"
+import CardPortfolio from "./components/CardPortfolio.astro"
+---
+
+<section class=" flex flex-col max-w-screen-xl p-8 w-full m-8 my-16 gap-8 items-start justify-center overflow-x-hidden">
+    <section class="title flex flex-col gap-2">
+        <h2 class="text-xl text-subtitle-color">
+            Portafolio
+        </h2>
+
+        <p class=" text-4xl text-title-color">
+            Échale un vistazo a mis trabajos
+        </p>
+    </section>
+
+    <section class="wrap-projects max-w-full flex flex-row flex-nowrap overflow-x-scroll py-8 gap-10 justify-start items-start">
+        <button class="arrow-back absolute left-8 self-center w-10 h-10 bg-transparent flex justify-center items-center rounded-3xl text-white -translate-y-10 transition-all rotate-180">
+            <IconArrow/>
+        </button>
+        <CardPortfolio
+            name="Grace Aesthetic"
+            url="https://www.graceaesthetic.com"
+            category="Desarrollo web"
+            image="/project-one.png"
+        >
+
+        </CardPortfolio>
+
+        <CardPortfolio
+            name="Candela Organic"
+            url="https://www.candelaorganic.com"
+            category="Desarrollo web"
+            image="/project-two.png"
+        >
+
+        </CardPortfolio>
+
+        <CardPortfolio
+            name="Plataforma Social Tangarana"
+            url="https://www.pstangarana.com"
+            category="Desarrollo web"
+            image="/project-three.png"
+        >
+
+        </CardPortfolio>
+
+        <CardPortfolio
+            name="Grace Aesthetic"
+            url="https://www.graceaesthetic.com"
+            category="Desarrollo web"
+            image=""
+        >
+
+        </CardPortfolio>
+
+        <CardPortfolio
+            name="Grace Aesthetic"
+            url="https://www.graceaesthetic.com"
+            category="Desarrollo web"
+            image=""
+        >
+
+        </CardPortfolio>
+        <button class="arrow absolute right-8 self-center w-10 h-10 bg-title-color flex justify-center items-center rounded-3xl text-white -translate-y-10 transition-all">
+            <IconArrow/>
+        </button>
+    </section>
+    
+</section>
+
+<script>
+    const arrow = document.querySelector('.arrow');
+    const arrow_back = document.querySelector('.arrow-back');
+    arrow.addEventListener('click',()=>{
+        const projects_slider= document.querySelector('.wrap-projects');
+
+        projects_slider.scrollLeft += 360
+
+        if(projects_slider.scrollLeft >= 300){
+            arrow.classList.remove("bg-title-color");
+            arrow.classList.add("bg-transparent");
+
+            arrow_back.classList.remove("bg-transparent");
+            arrow_back.classList.add("bg-title-color");
+        }
+    })
+
+    arrow_back.addEventListener('click',()=>{
+        const projects_slider= document.querySelector('.wrap-projects');
+
+        projects_slider.scrollLeft -= 360
+
+        if(projects_slider.scrollLeft <= 320){
+            arrow_back.classList.remove("bg-title-color");
+            arrow_back.classList.add("bg-transparent");
+
+            arrow.classList.remove("bg-transparent");
+            arrow.classList.add("bg-title-color");
+        }
+    })
+</script>
+
+

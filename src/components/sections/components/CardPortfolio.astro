@@ -1,0 +1,37 @@
+---
+import placeholder from "../components/card-default-image.webp";
+import IconArrow from "../../icons/IconArrow.astro";
+import IconCategory from "../../icons/IconCategory.astro";
+interface Props {
+    category:string,
+    name: string,
+    image: string,
+    url: string,
+}
+const {category,name,image,url} = Astro.props;
+const placeholderImage = placeholder;
+---
+
+<article class="flex min-w-80 flex-col w-80 bg-white hover:-translate-y-2 transition-all">
+
+    <img class="rounded-md" src=`${image? image : placeholderImage.src}` width=`${placeholder.width}` height=`${placeholder.height}` alt=`${name}`>
+
+    <div class="flex flex-col py-5 gap-4">
+        <div class="flex flex-col gap-1">
+            <span class="flex gap-2.5 text-zinc-600">
+                <IconCategory/>
+                <h4 class="text-xs">
+                    {category}
+                </h4>
+            </span>
+    
+            <h2 class="text-title-color text-lg">{name}</h2>
+        </div>
+        
+
+        <a class="flex gap-2.5 items-center hover:text-zinc-600" href=`${url}`>
+            Ver proyecto
+            <IconArrow/>
+        </a>
+    </div>
+</article>

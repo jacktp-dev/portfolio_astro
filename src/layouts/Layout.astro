@@ -40,10 +40,15 @@ const { title } = Astro.props;
 	}
 	*{
 		font-family: "Averta", sans-serif;
+		user-select: none;
+		scroll-behavior: smooth;
 	}
 
 	::-webkit-scrollbar{
 		display: none;
+	}
+	*::selection{
+		background-color: transparent;
 	}
 </style>
 
