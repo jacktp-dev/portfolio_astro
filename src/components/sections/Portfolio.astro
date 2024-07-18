@@ -5,16 +5,16 @@ import CardPortfolio from "./components/CardPortfolio.astro"
 
 <section id="portafolio" class=" flex flex-col max-w-screen-xl p-8 w-full m-8 my-16 gap-8 items-start justify-center overflow-x-hidden">
     <section class="title flex flex-col gap-2">
-        <h2 class="text-xl text-subtitle-color">
+        <h2 class="text-base md:text-xl text-subtitle-color">
             Portafolio
         </h2>
 
-        <p class=" text-4xl text-title-color">
+        <p class="text-2xl md:text-4xl text-title-color">
             Échale un vistazo a mis trabajos
         </p>
     </section>
 
-    <section class="wrap-projects max-w-full flex flex-row flex-nowrap overflow-x-scroll py-8 gap-10 justify-start items-start">
+    <section class="wrap-projects max-w-full flex flex-row flex-nowrap overflow-x-scroll py-8 gap-10 pr-20 justify-start items-start">
         
         <CardPortfolio
             name="Grace Aesthetic"
@@ -54,7 +54,7 @@ import CardPortfolio from "./components/CardPortfolio.astro"
 
 
         </CardPortfolio>
-        <div class="hidden md:flex gap-4 self-center">
+        <div class="flex gap-4 self-center">
             <button class="arrow-back self-center w-10 h-10 bg-transparent flex justify-center items-center rounded-3xl text-text-color -translate-y-10 transition-all rotate-180">
                 <IconArrow/>
             </button>
@@ -71,34 +71,40 @@ import CardPortfolio from "./components/CardPortfolio.astro"
 <script>
     const arrow = document.querySelector('.arrow');
     const arrow_back = document.querySelector('.arrow-back');
-    arrow.addEventListener('click',()=>{
-        const projects_slider= document.querySelector('.wrap-projects');
+    const projects_slider = document.querySelector('.wrap-projects');
 
-        projects_slider.scrollLeft += 360
+    const updateArrows = () => {
+        const maxScrollLeft = projects_slider.scrollWidth - projects_slider.clientWidth;
 
-        if(projects_slider.scrollWidth >= 200){
-            arrow.classList.replace("bg-title-color","bg-transparent");
-            arrow.classList.replace("text-white","text-text-color");
-
-            arrow_back.classList.replace("bg-transparent","bg-title-color");
-            arrow_back.classList.replace("text-text-color","text-white");
+        if (projects_slider.scrollLeft >= maxScrollLeft) {
+            arrow.classList.replace("bg-title-color", "bg-transparent");
+            arrow.classList.replace("text-white", "text-text-color");
+        } else {
+            arrow.classList.replace("bg-transparent", "bg-title-color");
+            arrow.classList.replace("text-text-color", "text-white");
         }
-    })
 
-    arrow_back.addEventListener('click',()=>{
-        const projects_slider= document.querySelector('.wrap-projects');
-
-        projects_slider.scrollLeft -= 360
-
-        if(projects_slider.scrollLeft <= 320){
-            arrow_back.classList.replace("bg-title-color","bg-transparent");
-            arrow_back.classList.replace("text-white","text-text-color");
-
-            arrow.classList.replace("bg-transparent","bg-title-color");
-            arrow.classList.replace("text-text-color","text-white");
-            
+        if (projects_slider.scrollLeft <= 0) {
+            arrow_back.classList.replace("bg-title-color", "bg-transparent");
+            arrow_back.classList.replace("text-white", "text-text-color");
+        } else {
+            arrow_back.classList.replace("bg-transparent", "bg-title-color");
+            arrow_back.classList.replace("text-text-color", "text-white");
         }
-    })
+    };
+
+    arrow.addEventListener('click', () => {
+        projects_slider.scrollLeft += 360;
+        setTimeout(updateArrows, 300);
+    });
+
+    arrow_back.addEventListener('click', () => {
+        projects_slider.scrollLeft -= 360;
+        setTimeout(updateArrows, 300);
+    });
+
+    projects_slider.addEventListener('scroll', updateArrows);
+
+    updateArrows();
+
 </script>
-
-

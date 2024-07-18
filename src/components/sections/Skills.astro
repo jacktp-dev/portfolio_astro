@@ -16,13 +16,13 @@ import ItemSkill from "./components/ItemSkill.astro";
 
 <section id="sobre-mi" class="flex flex-col py-20 self-stretch justify-center items-center gap-8">
     <div class="title-section flex flex-col gap-2 items-center">
-        <h2 class="text-xl text-text-color ">Sobre mí</h2>
-        <p class="text-4xl text-title-color">Más información acerca de mí</p>
+        <h2 class="text-base md:text-xl text-text-color ">Sobre mí</h2>
+        <p class="text-center text-2xl md:text-4xl text-title-color">Más información acerca de mí</p>
     </div>
     
     <section class="flex flex-col justify-center items-center gap-3">
-        <h3 class="text-title-color text-2xl">Habilidades técnicas</h3>
-        <div class="flex flex-wrap max-w-[676px]">
+        <h3 class="text-title-color text-lg md:text-2xl">Habilidades técnicas</h3>
+        <div class="flex justify-center flex-wrap max-w-[676px]">
             <ItemSkill>
                 <IconHTML/>
             </ItemSkill>
@@ -74,12 +74,11 @@ import ItemSkill from "./components/ItemSkill.astro";
            
 
         </div>
-        
     </section>
 
     <section class="flex flex-col justify-center items-center gap-3">
-        <h3 class="text-2xl text-title-color">Habilidades profesionales</h3>
-        <ul class="flex gap-8 items-center py-2 text-subtitle-color">
+        <h3 class=" text-lg md:text-2xl text-title-color">Habilidades profesionales</h3>
+        <ul class="flex flex-col md:flex-row gap-8 items-center py-2 text-subtitle-color">
             <li>Trabajo en equipo</li>
             <li>Liderazgo</li>
             <li>Comunicación</li>

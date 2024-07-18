@@ -14,14 +14,14 @@ const {title,text,border} = Astro.props;
 const add = border ? "lg:border-l lg:border-r lg:border-border-button": "" ;
 ---
 
-<article class=`flex flex-col w-80 gap-5 p-5 text-center justify-center items-center ${add}`>
+<article class=`flex grow max-w-screen-md flex-col w-80 gap-5 p-5 text-center justify-center items-center ${add}`>
     <span class="flex items-center justify-center bg-title-color text-white w-14 h-14 rounded-full">
         <slot/>
     </span>
 
     <h2 class="text-xl text-title-color">{title}</h2>
 
-    <p class="text-text-color">
+    <p class="text-text-color text-balance">
         {text}
     </p>
     <Button

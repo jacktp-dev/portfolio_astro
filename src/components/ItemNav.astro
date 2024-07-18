@@ -1,5 +1,4 @@
 ---
-import type { string } from 'astro/zod'
 
 interface Props {
     link: string; 
@@ -8,8 +7,7 @@ interface Props {
 const {link} = Astro.props;
 ---
 <a
-    class="flex items-center box-border self-stretch mb-[-1px] text-menu-text border-b border-transparent  
-    hover:border-title-color hover:text-title-color transition-all"
+    class="flex items-center box-border py-2 px-4 mb-[-1px] text-menu-text hover:bg-neutral-100 rounded-md hover:text-title-color transition-all"
     href={link}
     >
     <slot />

@@ -15,13 +15,13 @@ const {category, place, work, time, title, description} = Astro.props;
 const isWork = work ? 'bg-title-color text-white border-0':'bg-white text-title-color'
 ---
 
-<article class="py-8 flex gap-8 justify-start max-w-screen-md">
-    <section class="flex flex-col gap-2 w-48 justify-start items-start p-0 m-0">
+<article class="py-8 flex flex-col md:flex-row gap-8 justify-center items-center md:justify-start max-w-screen-md">
+    <section class="flex flex-col gap-2 w-48 justify-center md:justify-start items-center md:items-start p-0 m-0">
         <span class=`inline-flex justify-center items-center px-4 py-1 border border-border-button rounded-full text-xs ${isWork}`>
             {category}
         </span>
 
-        <h3 class="text-lg text-title-color">
+        <h3 class="text-lg text-title-color text-center md:text-left">
             {place}
         </h3>
 
@@ -31,16 +31,13 @@ const isWork = work ? 'bg-title-color text-white border-0':'bg-white text-title-
     </section>
 
     <section class="w-3/4 flex flex-col gap-2">
-        <h2 class="text-lg text-title-color">
+        <h2 class="text-lg text-title-color text-center md:text-left">
             {title}
         </h2>
 
-        <p class="text-text-color">
+        <p class="text-text-color text-center md:text-left">
             {description}
         </p>
     </section>
-
-
-    </Button>
 
 </article>

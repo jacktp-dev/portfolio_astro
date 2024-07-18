@@ -10,21 +10,21 @@ let date = new Date;
 ---
 <footer class="footer flex w-full m-0 max-w-screen-xl mx-auto flex-col p-8 items-center justify-center gap-8 self-stretch">
 
-    <section class="newsletter-section flex justify-between items-center py-16 self-stretch">
+    <section class="newsletter-section flex flex-col md:flex-row justify-between items-center py-16 gap-6 self-stretch">
 
-        <article class="flex flex-col gap-2 justify-center items-start">
-            <h4 class="text-subtitle-color text-xl">Boletín Mensual</h4>
-            <p class="text-title-color text-3xl">Suscríbete para recibir mis últimos blogs</p>
+        <article class="flex flex-col gap-2 justify-center items-center md:items-start">
+            <h4 class="text-subtitle-color text-base md:text-xl">Boletín Mensual</h4>
+            <p class="text-title-color text-2xl lg:text-3xl text-center md:text-left">Suscríbete para recibir mis últimos blogs</p>
         </article>
         
-        <form action="" method="post" class="flex justify-center items-center gap-2.5">
-            <input class="bg-white border border-border-button rounded-md w-[240px] py-2.5 px-2 placeholder:text-input-placeholder text-base outline-border-button focus:outline focus:outline-gray-300 transition-all " type="email" placeholder="Escribe tu correo">
+        <form action="" method="post" class="flex justify-center w-full items-stretch md:items-center gap-2.5">
+            <input class="bg-white border border-border-button rounded-md w-full sm:w-[240px] py-2.5 px-2 placeholder:text-input-placeholder text-base outline-border-button focus:outline focus:outline-gray-300 transition-all " type="email" placeholder="Escribe tu correo">
             <input class="py-2.5 px-6 bg-title-color text-white rounded-md hover:bg-hover-button transition-all cursor-pointer" type="submit" value="Suscríbete">
         </form>
 
     </section>
 
-    <section class="copy-section flex pt-8 justify-between items-center self-stretch  border-t-[1px] border-[#E4E4E4]">
+    <section class="copy-section flex flex-col-reverse md:flex-row pt-8 justify-between items-center self-stretch gap-6  border-t-[1px] border-[#E4E4E4]">
 
         <span class="text-text-color">© Copyright  {date.getFullYear()} | Jack Troncos</span>
         <div class="footer-social-icons flex gap-4 text-text-color">

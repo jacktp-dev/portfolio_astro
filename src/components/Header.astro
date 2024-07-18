@@ -1,26 +1,22 @@
 ---
-import Switch from "./mode/Switch.astro";
 import NavItem from "./ItemNav.astro";
-import Menu from "./lang/Menu.astro";
+import IconMenu from "./icons/IconMenu.astro";
 
 ---
 
-<header class="header flex fixed w-full m-0 max-w-screen-xl mx-auto px-8 justify-between items-center  box-border z-50">
+<header class="header flex fixed w-full m-0 max-w-screen-xl mx-auto px-8 justify-between items-center h-16 box-border z-50">
         <span>jacktroncos20@gmail.com</span>
 
-    <nav class="flex h-16 gap-10 justify-center items-center">
-        <NavItem link="#sobre-mi"> Sobre mí</NavItem>
-        <NavItem link="#servicios"> Servicios</NavItem>
-        <NavItem link="#portafolio"> Portafolio</NavItem>
-        <NavItem link="#contacto"> Contacto</NavItem>
-    </nav>
+        <label for="menu" class="self-center cursor-pointer py-2 hover:text-text-color transition-all active:scale-75 lg:hidden"><IconMenu/></label>
+        <input id="menu" class="hidden" type="checkbox"></input>
 
-    <!-- <div class="flex gap-6 items-center">
-        <Menu/>
-        <Switch/>
-    </div> -->
+        <nav class="nav-menu hidden lg:flex lg:h-16  lg:justify-center lg:items-center">
+            <NavItem link="#sobre-mi"> Sobre mí</NavItem>
+            <NavItem link="#servicios"> Servicios</NavItem>
+            <NavItem link="#portafolio"> Portafolio</NavItem>
+            <NavItem link="#contacto"> Contacto</NavItem>
+        </nav>
 </header>
-
 <script>
     const header = document.querySelector('header');
      window.addEventListener('scroll', () => {
@@ -32,4 +28,35 @@ import Menu from "./lang/Menu.astro";
             header.classList.remove('border-b');
         }
     });
+
+    
 </script>
+
+<style>
+
+    @media (max-width:1023px) {
+        .nav-menu{
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            top: 64px;
+            left: 0;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            clip-path: inset(0 0 100% 0);
+            background: white;
+            padding: 16px 32px;
+            gap: 24px;
+            border-bottom: 1px solid #eaeaea;
+            transition:all .26s ease-in-out;
+        }
+        #menu:checked + .nav-menu{
+        
+        clip-path: inset(0 0 0 0);
+
+        
+    }
+    }
+    
+</style>

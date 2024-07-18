@@ -5,8 +5,8 @@ const primary = false;
 ---
 
 <section id="contacto" class="flex w-full max-w-screen-xl p-8 my-16 items-center justify-center">
-    <article class="w-full flex flex-col p-28  rounded-md items-center justify-center gap-8 bg-neutral-950 bg-[url('/bg-contact.webp')] bg-cover bg-bottom text-center">
-        <h2 class="text-4xl text-white text">
+    <article class="contact-card w-full flex flex-col p-10 lg:p-28 rounded-md items-center justify-center gap-8 bg-neutral-950 bg-[url('/bg-contact.webp')] bg-cover bg-bottom text-center">
+        <h2 class="text-4xl text-white text transition-all">
             Cree un sitio web más rápido y hermoso.
         </h2>
 
@@ -17,3 +17,15 @@ const primary = false;
         <Button primary={primary} text="Empecemos"/>
     </article>
 </section>
+
+<style>
+    .contact-card::before{
+        display: block;
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: red;
+    }
+</style>
