@@ -1,0 +1,56 @@
+---
+import CardWork from "./components/CardWork.astro";
+import Button from '../buttons/Button.astro';
+import IconDownload from '../icons/IconDownload.astro';
+---
+
+<section id="servicios" class=" flex flex-col max-w-screen-xl p-8 w-full m-8 my-16 gap-8 items-center justify-center">
+    
+    <section class="title flex flex-col gap-2 items-center">
+        <h2 class="text-xl text-subtitle-color">
+            Educación y Experiencia
+        </h2>
+
+        <p class=" text-4xl text-title-color">
+            Mi formación profesional
+        </p>
+    </section>
+
+    <section class="flex flex-col gap-8 items-center">
+        <CardWork
+            category="Educación"
+            work={false}
+            place="SENATI Moyobamba"
+            time="3 años (2022-2024)"
+            title="Ingeniería de Software con IA"
+            description="Estudié 3 años en SENATI, adquiriendo sólidos conocimientos de programación para luego obtener mi título como técnico profesional en ingeniería de software con IA."
+        />
+
+        <CardWork
+            category="Trabajo"
+            work={true}
+            place="Plataforma Social Tangarana"
+            time="(2023-Actualmente)"
+            title="Desarrollador Web Junior"
+            description="Actualmente trabajo en la Plataforma Social Tangarana como desarrollador web. Usando tecnologías como PHP, JS, Astro, Wordpress y Figma en mi rutina diaria."
+        />
+
+        <CardWork
+            category="Educación"
+            work={false}
+            place="Independiente"
+            time="(Actualmente)"
+            title="Diseñador UI Junior y Desarrollador Web Fullstack"
+            description="Continúo potenciando mis conocimientos y habilidades. Me entusiasma trabajar en proyectos del mundo real, exponerme a herramientas estándar de la industria y recibir comentarios constructivos para perfeccionar y mejorar mis capacidades de diseño."
+        />
+
+        <Button
+        primary={true}
+        text='Descargar CV'
+        >
+            <IconDownload/>
+        </Button>
+        
+    </section>
+
+</section>
