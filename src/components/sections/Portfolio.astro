@@ -15,9 +15,7 @@ import CardPortfolio from "./components/CardPortfolio.astro"
     </section>
 
     <section class="wrap-projects max-w-full flex flex-row flex-nowrap overflow-x-scroll py-8 gap-10 justify-start items-start">
-        <button class="arrow-back z-50 absolute left-8 self-center w-10 h-10 bg-transparent flex justify-center items-center rounded-3xl text-white -translate-y-10 transition-all rotate-180">
-            <IconArrow/>
-        </button>
+        
         <CardPortfolio
             name="Grace Aesthetic"
             url="https://www.graceaesthetic.com"
@@ -56,9 +54,16 @@ import CardPortfolio from "./components/CardPortfolio.astro"
 
 
         </CardPortfolio>
-        <button class="arrow z-50 absolute right-8 self-center w-10 h-10 bg-title-color flex justify-center items-center rounded-3xl text-white -translate-y-10 transition-all">
-            <IconArrow/>
-        </button>
+        <div class="hidden md:flex gap-4 self-center">
+            <button class="arrow-back self-center w-10 h-10 bg-transparent flex justify-center items-center rounded-3xl text-text-color -translate-y-10 transition-all rotate-180">
+                <IconArrow/>
+            </button>
+            
+            <button class="arrow z-50  self-center w-10 h-10 bg-title-color flex justify-center items-center rounded-3xl text-white -translate-y-10 transition-all">
+                <IconArrow/>
+            </button>
+        </div>
+        
     </section>
     
 </section>
@@ -71,12 +76,12 @@ import CardPortfolio from "./components/CardPortfolio.astro"
 
         projects_slider.scrollLeft += 360
 
-        if(projects_slider.scrollLeft >= 10){
-            arrow.classList.remove("bg-title-color");
-            arrow.classList.add("bg-transparent");
+        if(projects_slider.scrollWidth >= 200){
+            arrow.classList.replace("bg-title-color","bg-transparent");
+            arrow.classList.replace("text-white","text-text-color");
 
-            arrow_back.classList.remove("bg-transparent");
-            arrow_back.classList.add("bg-title-color");
+            arrow_back.classList.replace("bg-transparent","bg-title-color");
+            arrow_back.classList.replace("text-text-color","text-white");
         }
     })
 
@@ -86,11 +91,12 @@ import CardPortfolio from "./components/CardPortfolio.astro"
         projects_slider.scrollLeft -= 360
 
         if(projects_slider.scrollLeft <= 320){
-            arrow_back.classList.remove("bg-title-color");
-            arrow_back.classList.add("bg-transparent");
+            arrow_back.classList.replace("bg-title-color","bg-transparent");
+            arrow_back.classList.replace("text-white","text-text-color");
 
-            arrow.classList.remove("bg-transparent");
-            arrow.classList.add("bg-title-color");
+            arrow.classList.replace("bg-transparent","bg-title-color");
+            arrow.classList.replace("text-text-color","text-white");
+            
         }
     })
 </script>
