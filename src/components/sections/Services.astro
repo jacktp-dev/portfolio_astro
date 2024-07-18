@@ -1,0 +1,45 @@
+---
+import CardService from "./components/CardService.astro";
+import IconDesign from "../icons/services/IconDesign.astro";
+import IconWeb from "../icons/services/IconWeb.astro";
+import IconApp from "../icons/services/IconApp.astro";
+---
+
+<section id="servicios" class=" flex flex-col max-w-screen-xl p-8 w-full m-8 my-16 gap-8 items-center justify-center overflow-x-hidden">
+    <section class="title flex flex-col gap-2 items-center">
+        <h2 class="text-xl text-subtitle-color">
+            Servicios
+        </h2>
+
+        <p class=" text-4xl text-title-color">
+            Calidad al mejor costo
+        </p>
+    </section>
+
+    <section class="wrap-services max-w-full flex flex-row flex-wrap overflow-x-scroll py-8 justify-start items-start">
+        <CardService
+            border={false} 
+            title="Diseño UI/UX"
+            text="Me especializo en crear interfaces intuitivas y visualmente atractivas que hacen que cada interacción sea fácil y agradable. Combinando estilo con funcionalidad."
+            >
+            <IconDesign/>
+        </CardService>
+
+        <CardService 
+            border={true}
+            title="Desarrollo Web"
+            text="Desde sitios web que se ven geniales en cualquier dispositivo hasta aplicaciones web que se ejecutan sin problemas. Haciendo uso de lo último en tecnologías."
+            >
+            <IconWeb/>
+        </CardService>
+
+        <CardService 
+            border={false}
+            title="Desarrollo de aplicaciones"
+            text="Ya sea para iOS o Android. Utilizo herramientas modernas para crear aplicaciones que sean rápidas, fáciles de usar y que hagan la vida digital efectiva."
+            >
+            <IconApp/>
+        </CardService>
+    </section>
+    
+</section>
