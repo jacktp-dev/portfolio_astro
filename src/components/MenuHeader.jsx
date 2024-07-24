@@ -13,12 +13,12 @@ export default function MenuHeader() {
     const style = "lg:flex lg:flex-row lg:h-16 lg:w-fit lg:static  lg:justify-center lg:items-center lg:gap-0"
     return (
         <>
-        <span onClick={HandleClick} class="self-center cursor-pointer py-2 text-text-color hover:text-title-color transition-all active:scale-75 lg:hidden">
+        <span onClick={HandleClick} className="self-center cursor-pointer py-2 text-text-color hover:text-title-color transition-all active:scale-75 lg:hidden">
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
                 <path d="M3 18V16H21V18H3ZM3 13V11H21V13H3ZM3 8V6H21V8H3Z" fill="currentColor"/>
             </svg>
         </span>
-        <nav class={state+" "+style}>
+        <nav className={state+" "+style}>
 
             <a onClick={HandleClick} className={itemStyle} href="#sobre-mi"> 
                 Sobre mí

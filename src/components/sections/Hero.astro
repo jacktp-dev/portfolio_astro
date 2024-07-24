@@ -3,8 +3,9 @@ import FbIcon from "../icons/social/FbIcon.astro";
 import GhIcon from "../icons/social/GhIcon.astro";
 import IgIcon from "../icons/social/IgIcon.astro";
 import LkIcon from "../icons/social/LkIcon.astro";
-import Button from "../buttons/Button.astro";
+import Button from "../Button.astro";
 import IconDownload from "../icons/IconDownload.astro";
+import IconMail from "../icons/IconMail.astro";
 
 const primary = true;
 ---
@@ -25,7 +26,9 @@ const primary = true;
 
     <div class="flex w-full flex-col md:flex-row justify-center gap-4" >
         
-        <Button text="Mis proyectos" primary={primary}/>
+        <Button text="Contáctame" primary={primary}>
+            <IconMail/>
+        </Button>
         <Button text="Descargar CV" primary={!primary}>
             <IconDownload/>
         </Button>

@@ -6,6 +6,7 @@ import Services from '../components/sections/Services.astro';
 import Contact from '../components/sections/Contact.astro';
 import Portfolio from '../components/sections/Portfolio.astro';
 import Work from '../components/sections/Work.astro';
+import Cursor from '../components/Cursor.jsx'
 ---
 
 <Layout title="Jack TP">
@@ -17,6 +18,7 @@ import Work from '../components/sections/Work.astro';
 		<Portfolio/>
 		<Contact/>
 	</main>
+	<Cursor client:only/>
 </Layout>
 
 

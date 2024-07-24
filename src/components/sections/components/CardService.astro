@@ -1,23 +1,22 @@
 ---
-import Button from "../../buttons/Button.astro";
+import Button from "../../Button.astro";
 import IconArrow from "../../icons/IconArrow.astro";
 const type = false;
 
 interface Props {
     title: string,
     text: string,
-    border: boolean,
+    color: string,
 }
 
-const {title,text,border} = Astro.props;
+const {title,text,color} = Astro.props;
 
-const add = border ? "lg:border-l lg:border-r lg:border-border-button": "" ;
 ---
 
-<article class=`flex grow max-w-screen-md flex-col w-80 gap-5 p-5 text-center justify-center items-center ${add}`>
-    <span class="flex items-center justify-center bg-title-color text-white w-14 h-14 rounded-full">
+<article class=`flex bg-white/50 backdrop-blur-sm grow max-w-screen-md flex-col w-80 gap-5 p-5 text-center justify-center items-center border border-border-button rounded-2xl hover:shadow-lg transition-all`>
+    <div class=`flex items-center justify-center border border-[#${color}] text-[#${color}] w-12 h-12 rounded-md bg-red`>
         <slot/>
-    </span>
+    </div>
 
     <h2 class="text-xl text-title-color">{title}</h2>
 
