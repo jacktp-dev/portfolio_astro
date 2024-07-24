@@ -26,9 +26,9 @@ export default function MenuHeader() {
 
     const mobile = "fixed top-16 right-0 w-full h-full flex-col justify-start pt-16 items-stretch gap-10 rounded-0"
 
-    const state = isOpen ? "bg-white mr-[0] transition-all duration-300": "mr-[-100vw]";
+    const state = isOpen ? "bg-white mr-[0]": "mr-[-100vw]";
 
-    const desktop = " lg:static lg:mr-0 lg:bg-transparent flex lg:flex-row lg:h-12 lg:w-fit lg:static lg:justify-center lg:items-center lg:pt-0 lg:gap-0 lg:rounded-[32px] lg:transition-none"
+    const desktop = " lg:static lg:mr-0 lg:bg-transparent flex lg:flex-row lg:h-12 lg:w-fit lg:static lg:justify-center lg:items-center lg:pt-0 lg:gap-0 lg:rounded-[32px] lg:transition-none transition-all duration-300"
 
     const style = mobile+" "+state+" "+desktop+" "+isScroll
     return (
