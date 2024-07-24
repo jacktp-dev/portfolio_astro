@@ -12,7 +12,7 @@ const {category,name,image,url} = Astro.props;
 const placeholderImage = placeholder;
 ---
 
-<article class="flex min-w-80 flex-col w-80 bg-white hover:-translate-y-2 transition-all">
+<article class="flex min-w-80 flex-col w-80 hover:-translate-y-2 transition-all">
 
     <img class="rounded-md" src=`${image? image : placeholderImage.src}` width=`${placeholder.width}` height=`${placeholder.height}` alt=`${name}`>
 

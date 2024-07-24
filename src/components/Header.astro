@@ -1,25 +1,10 @@
 ---
-import NavItem from "./ItemNav.astro";
 import MenuHeader from "./MenuHeader.jsx"
 
 ---
 
-<header class="header flex fixed w-full m-0 max-w-screen-xl mx-auto px-5 md:px-8 justify-between items-center h-16 box-border z-50">
-        <span class="text-">Jack TP</span>
+<header class="header flex fixed w-full m-0 max-w-screen-xl mx-auto px-5 md:px-8  items-center h-16 box-border justify-end bg-white lg:bg-transparent lg:justify-center z-50">
         <MenuHeader client:load/>
   
 </header>
-<script>
-    const header = document.querySelector('header');
-     window.addEventListener('scroll', () => {
-        if (window.scrollY > 10) {
-            header.classList.add('bg-white');
-            header.classList.add('border-b');
-        } else {
-            header.classList.remove('bg-white');
-            header.classList.remove('border-b');
-        }
-    });
 
-    
-</script>

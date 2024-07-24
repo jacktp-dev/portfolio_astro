@@ -10,6 +10,7 @@ const className = primary ? "bg-title-color text-white hover:bg-[#383838]":"bord
 
 ---
 <button class=`flex justify-center min-w-fit items-center px-8 h-11 rounded-md gap-2.5 transition-all ${className}`>
-    <slot/>
+    <slot name="icon-left"/>
     {text}
+    <slot name="icon-right"/>
 </button>

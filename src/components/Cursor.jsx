@@ -18,11 +18,11 @@ export default function Cursor() {
   }, []);
 
   const style = {
-    background: `radial-gradient(400px at ${mouseX}px ${mouseY}px, rgba(216, 29, 175, 0.10), transparent 80%)`
+    background: `radial-gradient(400px at ${mouseX}px ${mouseY}px, rgba(29, 104, 216, 0.15), transparent 80%)`
   };
 
   return (
-    <div className="cursor pointer-events-none absolute inset-0 z-0 transition duration-300 h-[4468px]" style={style}>
+    <div className="cursor pointer-events-none hidden lg:block lg:absolute inset-0 -z-0 transition duration-300 lg:h-[4851px]" style={style}>
     </div>
   );
 }
