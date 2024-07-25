@@ -1,8 +1,4 @@
 ---
-import FbIcon from "./icons/social/FbIcon.astro";
-import GhIcon from "./icons/social/GhIcon.astro";
-import IgIcon from "./icons/social/IgIcon.astro";
-import LkIcon from "./icons/social/LkIcon.astro";
 
 let date = new Date;
 
@@ -27,11 +23,5 @@ let date = new Date;
     <section class="copy-section flex flex-col-reverse md:flex-row pt-8 justify-between items-center self-stretch gap-6  border-t-[1px] border-[#E4E4E4]">
 
         <span class="text-text-color">© Copyright  {date.getFullYear()} | Jack Troncos</span>
-        <div class="footer-social-icons flex gap-4 text-text-color">
-            <FbIcon/>
-            <IgIcon/>
-            <LkIcon/>
-            <GhIcon/>
-        </div>
     </section>
 </footer>

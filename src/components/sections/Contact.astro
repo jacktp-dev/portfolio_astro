@@ -1,5 +1,5 @@
 ---
-import Button from "../Button.astro";
+import Button from "../Button.tsx"
 
 const primary = false;
 ---
@@ -17,15 +17,3 @@ const primary = false;
         <Button primary={primary} text="Empecemos"/>
     </article>
 </section>
-
-<style>
-    .contact-card::before{
-        display: block;
-        width: 100px;
-        height: 100px;
-        position: absolute;
-        top: 0;
-        left: 0;
-        background-color: red;
-    }
-</style>

@@ -14,7 +14,7 @@ import CardPortfolio from "./components/CardPortfolio.astro"
         </p>
     </section>
 
-    <section class="wrap-projects max-w-full flex flex-row flex-nowrap overflow-x-scroll py-8 gap-10 pr-20 justify-start items-start">
+    <section class="wrap-projects max-w-full flex flex-row flex-wrap overflow-x-scroll py-8 gap-10 pr-20 justify-center items-start">
         
         <CardPortfolio
             name="Grace Aesthetic"
@@ -54,57 +54,8 @@ import CardPortfolio from "./components/CardPortfolio.astro"
 
 
         </CardPortfolio>
-        <div class="flex gap-4 self-center">
-            <button class="arrow-back self-center w-10 h-10 bg-transparent flex justify-center items-center rounded-3xl text-text-color -translate-y-10 transition-all rotate-180">
-                <IconArrow/>
-            </button>
-            
-            <button class="arrow z-50  self-center w-10 h-10 bg-title-color flex justify-center items-center rounded-3xl text-white -translate-y-10 transition-all">
-                <IconArrow/>
-            </button>
-        </div>
         
     </section>
     
 </section>
 
-<script>
-    const arrow = document.querySelector('.arrow');
-    const arrow_back = document.querySelector('.arrow-back');
-    const projects_slider = document.querySelector('.wrap-projects');
-
-    const updateArrows = () => {
-        const maxScrollLeft = projects_slider.scrollWidth - projects_slider.clientWidth;
-
-        if (projects_slider.scrollLeft >= maxScrollLeft) {
-            arrow.classList.replace("bg-title-color", "bg-transparent");
-            arrow.classList.replace("text-white", "text-text-color");
-        } else {
-            arrow.classList.replace("bg-transparent", "bg-title-color");
-            arrow.classList.replace("text-text-color", "text-white");
-        }
-
-        if (projects_slider.scrollLeft <= 0) {
-            arrow_back.classList.replace("bg-title-color", "bg-transparent");
-            arrow_back.classList.replace("text-white", "text-text-color");
-        } else {
-            arrow_back.classList.replace("bg-transparent", "bg-title-color");
-            arrow_back.classList.replace("text-text-color", "text-white");
-        }
-    };
-
-    arrow.addEventListener('click', () => {
-        projects_slider.scrollLeft += 360;
-        setTimeout(updateArrows, 300);
-    });
-
-    arrow_back.addEventListener('click', () => {
-        projects_slider.scrollLeft -= 360;
-        setTimeout(updateArrows, 300);
-    });
-
-    projects_slider.addEventListener('scroll', updateArrows);
-
-    updateArrows();
-
-</script>

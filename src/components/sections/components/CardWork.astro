@@ -11,30 +11,52 @@ interface Props{
 
 const {category, place, work, time, title, description} = Astro.props;
 
-const isWork = work ? 'bg-title-color text-white border-0':'bg-white text-title-color'
+const isWork = work ? 
+`text-white/90 
+bg-neutral-900 
+dark:bg-blue-700/50 
+border-0`
+:
+`border border-neutral-200 
+bg-white/50
+dark:text-white/80
+dark:border-slate-600
+dark:bg-slate-800/50 
+    `
 ---
 
-<article class="py-8 flex flex-col md:flex-row gap-8 justify-center items-center md:justify-start max-w-screen-md">
-    <section class="flex flex-col gap-2 w-48 justify-center md:justify-start items-center md:items-start p-0 m-0">
+<article 
+    class="py-6 px-6
+    flex flex-col justify-center items-center self-stretch
+    max-w-screen-md
+    bg-white/30 dark:bg-slate-800/50
+    border border-neutral-200 dark:border-slate-700 rounded-2xl
+    md:flex-row gap-8 md:justify-center"
+>
+    <section 
+        class="flex flex-col 
+        gap-2 md:w-48 w-full p-0 m-0
+        justify-start items-start"
+    >
         <span class=`inline-flex justify-center items-center px-4 py-1 border border-border-button rounded-full text-xs ${isWork}`>
             {category}
         </span>
 
-        <h3 class="text-lg text-title-color text-center md:text-left">
+        <h3 class="text-lg text-neutral-900 dark:text-white/80 text-center md:text-left">
             {place}
         </h3>
 
-        <span class="text-sm text-text-color">
+        <span class="text-sm font-light text-neutral-400">
             {time}
         </span>
     </section>
 
-    <section class="w-3/4 flex flex-col gap-2">
-        <h2 class="text-lg text-title-color text-center md:text-left">
+    <section class="w-full md:w-3/4 flex flex-col gap-2">
+        <h2 class="text-lg text-neutral-900 dark:text-white/80 text-left">
             {title}
         </h2>
 
-        <p class="text-text-color text-center md:text-left">
+        <p class="font-light text-neutral-400 :text-left">
             {description}
         </p>
     </section>

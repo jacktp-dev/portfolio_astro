@@ -7,16 +7,28 @@ import IconApp from "../icons/services/IconApp.astro";
 
 <section id="servicios" class=" flex flex-col max-w-screen-xl p-8 w-full m-8 my-16 gap-8 items-center justify-center overflow-x-hidden">
     <section class="title flex flex-col gap-2 items-center">
-        <h2 class="text-base md:text-xl text-subtitle-color">
+        <h2 
+            class="flex justify-center items-center
+            py-1 px-3 bg-white/50
+            text-neutral-900 text-sm
+            border border-neutral-200 rounded-full
+
+            dark:text-white/80 dark:bg-slate-700/50 dark:border-slate-600
+            "
+        >
             Servicios
         </h2>
 
-        <p class="text-2xl md:text-4xl text-title-color">
+        <p 
+            class="text-4xl text-neutral-900
+            dark:text-white/80"
+        >
             Calidad al mejor costo
         </p>
     </section>
 
-    <section class="wrap-services max-w-full flex flex-row flex-wrap overflow-x-scroll py-8 justify-center gap-4 items-center">
+    <section 
+        class="wrap-services max-w-full flex flex-row flex-wrap overflow-x-scroll py-8 justify-center gap-4 items-stretch">
         <CardService
             title="Diseño UI/UX"
             type="primary"

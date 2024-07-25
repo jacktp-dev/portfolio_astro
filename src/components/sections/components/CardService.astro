@@ -1,5 +1,5 @@
 ---
-import Button from "../../Button.astro";
+import Button from "../../Button.tsx"
 import IconArrow from "../../icons/IconArrow.astro";
 
 
@@ -13,25 +13,71 @@ const {title,text,type} = Astro.props;
 let className = ""
 const typeButton = false;
 if(type==='primary'){
-    className ='bg-[rgb(255,156,6,.1)] border-[#FF9C06] text-[#FF9C06]'
+    className =`
+    bg-[rgb(255,156,6,.1)] 
+    border-[#FF9C06] 
+    text-[#FF9C06]
+    
+    dark:bg-[rgb(97, 80, 55, 0.10)] 
+    dark:border-[#615037] 
+    dark:text-[#FFE0B1]
+    `
 }else if(type==='secondary'){
-    className ='bg-[#0084CE1a] border-[#0084CE] text-[#0084CE]'
+    className =`
+        bg-[#0084CE1a] 
+        border-[#0084CE] 
+        text-[#0084CE]
+        
+        dark:bg-[rgb(43, 90, 117, 0.10)] 
+        dark:border-[#2B5A75] 
+        dark:text-[#BFE8FF]
+    `
 }else if(type==='alternate'){
-    className ='bg-[#D027461a] border-[#D02746] text-[#D02746]'
+    className =`
+        bg-[#D027461a] 
+        border-[#D02746] 
+        text-[#D02746]
+        
+        dark:bg-[rgb(124, 65, 76, 0.10)] 
+        dark:border-[#7C414C] 
+        dark:text-[#FFA3B3]
+        `
 }
 ---
 
-<article class=`flex bg-white/50 backdrop-blur-sm grow max-w-screen-md flex-col w-80 gap-5 p-5 justify-center items-start border border-border-button rounded-2xl hover:shadow-lg transition-all`>
+<article 
+    class=`flex flex-col grow
+        bg-white/50 backdrop-blur-sm 
+        w-80
+        gap-5 p-5 
+        justify-center items-start 
+        border border-neutral-200 rounded-2xl 
+        hover:shadow-lg 
+        transition-all
+        
+        dark:bg-slate-800/10
+        dark:border-slate-800
+        dark:hover:bg-slate-700/30
+        0
+        `
+    >
     <div class="flex gap-4 items-center w-full">
         <div class=`${className} flex items-center justify-center border w-12 h-12 rounded-md`>
             <slot/>
         </div>
     
-        <h2 class="text-xl text-title-color">{title}</h2>
+        <h2 
+            class="text-xl text-neutral-900 dark:text-white/80"
+        >
+            {title}
+        </h2>
     </div>
     
 
-    <p class="text-text-color">
+    <p 
+        class="text-neutral-600 font-light
+        dark:text-neutral-400"
+    >
         {text}
     </p>
     <Button
