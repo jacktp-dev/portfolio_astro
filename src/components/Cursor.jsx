@@ -18,7 +18,7 @@ export default function Cursor() {
   }, []);
 
   const style = {
-    background: `radial-gradient(400px at ${mouseX}px ${mouseY}px, rgba(29, 104, 216, 0.15), transparent 80%)`
+    background: `radial-gradient(600px at ${mouseX}px ${mouseY}px, rgba(29, 104, 216, 0.15), transparent 80%)`
   };
 
   return (
